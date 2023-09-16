@@ -1,0 +1,30 @@
+﻿@using Odev1.Entities;
+@model IEnumerable<Order>
+
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Odev1.styles.css" asp-append-version="true" />
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Siparis Id</th>
+            <th>Siparis Tarihi</th>
+            <th>Gonderilen Ulke</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OrderId</td>
+                <td>@item.OrderDate</td>
+                <td>@item.ShipCountry</td>
+            </tr>
+        }
+    </tbody>
+</table>
